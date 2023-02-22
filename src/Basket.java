@@ -110,4 +110,15 @@ public class Basket {
 
         return new Basket(productsNew, pricesNew, binNew);
     }
+    public void saveBin(File file) throws IOException {
+        ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(file));
+        out.writeObject(this);
+        out.close();
+    }
+    static Basket loadFromBinFile(File file) throws IOException, ClassNotFoundException {
+        ObjectInputStream in = new ObjectInputStream(new FileInputStream(file));
+        Basket basket = (Basket) in.readObject();
+        in.close();
+        return basket;
+    }
 }
