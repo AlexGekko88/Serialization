@@ -32,7 +32,7 @@ public class Basket {
     public void addToCart(int productNum, int amount) { //метод добавления amount штук продукта номер productNum в корзину;
         bin[productNum] += amount;
         bin[productNum] = Math.max(bin[productNum], 0);
-    }//
+    }
 
     public void printCart() { //метод вывода на экран покупательской корзины
 
@@ -45,7 +45,7 @@ public class Basket {
             sum += bin[i] * prices[i];
         }
         System.out.println("Общая сумма покупок: " + dF.format(sum) + " руб.");
-    }//
+    }
 
     public void printListOfProducts() { //метод вывода на экран доступных товаров для покупки
         System.out.println("Список возможных товаров для покупки: ");
@@ -74,7 +74,7 @@ public class Basket {
         subSaveTxt(binInteger, textFile, writer);
         writer.close();
 
-    }//
+    }
 
     public <T> void subSaveTxt(T[] arr, File textFile, PrintWriter writer) throws FileNotFoundException { //доп.дженерик-метод, чтобы избежать копирования в методе saveTxt
 
@@ -109,6 +109,5 @@ public class Basket {
         int[] binNew = Arrays.stream(listOfLines.get(2)).mapToInt(Integer::parseInt).toArray();
 
         return new Basket(productsNew, pricesNew, binNew);
-    }//
-
+    }
 }
