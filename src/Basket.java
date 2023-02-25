@@ -86,7 +86,7 @@ public class Basket {
 
     }
 
-    static Basket loadFromTxtFile(File textFile) {
+    public static Basket loadFromTxtFile(File textFile) {
 
         String[] arrOfLines = new String[QTY_OF_LINES];
 
